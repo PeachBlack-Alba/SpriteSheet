@@ -60,8 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 200.0,
-              width: 200.0,
+              height: 250.0,
+              width: 250.0,
                 child: AnimationWidget(animation: _animation),
             ),
           ),
