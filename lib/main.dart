@@ -6,28 +6,27 @@ import 'package:flame/sprite.dart';
 import 'package:flame/spritesheet.dart';
 import 'package:flame/widgets/animation_widget.dart';
 
-const COLOR = const Color(0xFFFF8C75);
 Sprite _sprite;
 animation.Animation _animation;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  _sprite = await Sprite.loadSprite('minotaur.png', width: 96, height: 96);
+  _sprite = await Sprite.loadSprite('bomba.png', width: 60, height: 120);
 
-  await Flame.images.load('minotaur.png');
+  await Flame.images.load('bomba.png');
   final _animationSpriteSheet = SpriteSheet(
-    imageName: 'minotaur.png',
-    columns: 19,
+    imageName: 'bomba.png',
+    columns: 9,
     rows: 1,
-    textureWidth: 96,
-    textureHeight: 96,
+    textureWidth: 60,
+    textureHeight: 120,
   );
   _animation = _animationSpriteSheet.createAnimation(
     0,
     // time between frames
     stepTime: 0.4,
-    to: 19,
+    to: 9,
   );
   runApp(MyApp());
 }
@@ -60,8 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 250.0,
-              width: 250.0,
+              height: 150.0,
+              width: 150.0,
                 child: AnimationWidget(animation: _animation),
             ),
           ),
